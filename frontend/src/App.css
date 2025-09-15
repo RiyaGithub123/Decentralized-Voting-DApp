@@ -1,0 +1,416 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+.App-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 20px 40px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.App-header h1 {
+  color: #333;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.wallet-info {
+  background: rgba(102, 126, 234, 0.1);
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 2px solid rgba(102, 126, 234, 0.3);
+}
+
+.wallet-info p {
+  color: #333;
+  font-weight: 600;
+  margin: 0;
+}
+
+.connect-button {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.connect-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  margin-bottom: 30px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Create Proposal Form */
+.create-proposal .form-group {
+  margin-bottom: 20px;
+}
+
+.create-proposal label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 600;
+}
+
+.create-proposal textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e1e5e9;
+  border-radius: 10px;
+  font-size: 14px;
+  resize: vertical;
+  transition: border-color 0.3s;
+}
+
+.create-proposal textarea:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.duration-inputs {
+  display: flex;
+  gap: 20px;
+}
+
+.duration-inputs > div {
+  flex: 1;
+}
+
+.duration-inputs input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.duration-inputs input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.submit-button {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Proposals List */
+.proposals-list {
+  display: grid;
+  gap: 20px;
+}
+
+.no-proposals {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  padding: 40px;
+}
+
+.proposal-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #667eea;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.proposal-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.proposal-card.ended {
+  border-left-color: #95a5a6;
+  opacity: 0.8;
+}
+
+.proposal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.proposal-header h3 {
+  color: #333;
+  font-size: 1.3rem;
+}
+
+.status {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status.active {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status.ended {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.proposal-description p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.proposal-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.votes {
+  display: flex;
+  gap: 20px;
+}
+
+.vote-count {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.vote-count .label {
+  font-weight: 600;
+}
+
+.vote-count .count {
+  background: #f8f9fa;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-weight: 700;
+  min-width: 30px;
+  text-align: center;
+}
+
+.vote-count.yes .count {
+  background: #d4edda;
+  color: #155724;
+}
+
+.vote-count.no .count {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.deadline .time-left {
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Vote Component */
+.vote-component {
+  border-top: 1px solid #e9ecef;
+  padding-top: 20px;
+}
+
+.vote-component h4 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.vote-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.vote-button {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.vote-button.yes {
+  background: #28a745;
+  color: white;
+}
+
+.vote-button.yes:hover:not(:disabled) {
+  background: #218838;
+}
+
+.vote-button.no {
+  background: #dc3545;
+  color: white;
+}
+
+.vote-button.no:hover:not(:disabled) {
+  background: #c82333;
+}
+
+.vote-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.vote-status {
+  text-align: center;
+  padding: 15px;
+  background: #d4edda;
+  color: #155724;
+  border-radius: 10px;
+  border: 1px solid #c3e6cb;
+}
+
+.vote-loading {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+/* Final Results */
+.final-result {
+  border-top: 1px solid #e9ecef;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.final-result h4 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.winner {
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.winner.yes {
+  background: #d4edda;
+  color: #155724;
+}
+
+.winner.no {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.winner.tie {
+  background: #fff3cd;
+  color: #856404;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .App-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .App-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .main-content {
+    padding: 20px 10px;
+  }
+
+  .section {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .duration-inputs {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .proposal-stats {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .vote-buttons {
+    flex-direction: column;
+  }
+}
