@@ -1,103 +1,149 @@
 # 🗳️ Decentralized Voting DApp
 
-A full-stack decentralized application (DApp) for voting on proposals, built with Solidity, Hardhat, React, and ethers.js. **Now deployed on Sepolia testnet!**
+This is a full-stack decentralized application (DApp) that allows users to create and vote on proposals. The application is built using a modern web development stack, including Solidity for the smart contract, Hardhat for the development environment, React for the frontend, and ethers.js for interacting with the Ethereum blockchain.
 
-🌐 **Live Demo**: [Replace with your actual Vercel URL]  
-🔗 **Contract Address**: `0xd3B11D906B4b14b68381d96abB9d5523f7500C43` (Sepolia)  
-🔍 **View on Etherscan**: [https://sepolia.etherscan.io/address/0xd3B11D906B4b14b68381d96abB9d5523f7500C43](https://sepolia.etherscan.io/address/0xd3B11D906B4b14b68381d96abB9d5523f7500C43)
+The DApp is currently deployed on the **Sepolia testnet**.
 
-## 📋 Features
+- 🌐 **Live Demo**: [Link to your Vercel deployment]
+- 🔗 **Contract Address**: `0xd3B11D906B4b14b68381d96abB9d5523f7500C43` (on Sepolia)
+- 🔍 **Etherscan**: [https://sepolia.etherscan.io/address/0xd3B11D906B4b14b68381d96abB9d5523f7500C43](https://sepolia.etherscan.io/address/0xd3B11D906B4b14b68381d96abB9d5523f7500C43)
 
-- **Create Proposals**: Users can create voting proposals with custom descriptions and deadlines
-- **Vote on Proposals**: Cast YES/NO votes on active proposals
-- **Real-time Results**: View live voting results and final outcomes
-- **Prevent Double Voting**: Smart contract ensures each address can only vote once per proposal  
-- **Deadline Management**: Automatic voting period enforcement
-- **Beautiful UI**: Modern, responsive React frontend
-- **MetaMask Integration**: Connect your wallet to interact with the blockchain
+## ✨ Features
 
-## 🛠️ Technology Stack
+- **Create Proposals**: Any user can create a new proposal for others to vote on.
+- **Vote on Proposals**: Users can cast a "Yes" or "No" vote on any active proposal.
+- **Real-time Results**: Voting results are updated in real-time and can be viewed by anyone.
+- **Prevent Double Voting**: The smart contract ensures that each user can only vote once per proposal.
+- **Deadline Enforcement**: Proposals have a voting deadline, after which no more votes can be cast.
+- **MetaMask Integration**: Users can easily connect their MetaMask wallet to interact with the DApp.
+- **Modern UI**: The frontend is built with React and styled with modern CSS for a great user experience.
 
-- **Smart Contract**: Solidity ^0.8.19
-- **Development Framework**: Hardhat
+## 🛠️ Tech Stack
+
+- **Smart Contract**: Solidity `^0.8.19`
+- **Development Environment**: Hardhat
 - **Frontend**: React.js
 - **Blockchain Interaction**: ethers.js
-- **Network**: Sepolia Ethereum Testnet
+- **Network**: Sepolia Testnet
 - **RPC Provider**: Alchemy
-- **Deployment**: Vercel (Frontend)
-- **Styling**: CSS3 with modern gradients and animations
+- **Frontend Deployment**: Vercel
+- **Styling**: CSS3
 - **Testing**: Hardhat/Chai
 
 ## 🏗️ Project Structure
 
 ```
-build-on-ethereum/
-├── contracts/               # Smart contracts
-│   └── Voting.sol          # Main voting contract
-├── test/                   # Smart contract tests
-│   └── Voting.js           # Comprehensive test suite
-├── scripts/                # Deployment scripts
-│   └── deploy.js           # Contract deployment script
-├── frontend/               # React frontend
+/
+├── contracts/
+│   └── Voting.sol          # The main smart contract for the voting system
+├── test/
+│   └── Voting.js           # Tests for the smart contract
+├── scripts/
+│   └── deploy.js           # Script for deploying the smart contract
+├── frontend/
 │   └── src/
-│       ├── components/     # React components
-│       ├── contracts/      # Generated contract ABIs
-│       └── App.js          # Main app component
-└── hardhat.config.js       # Hardhat configuration
+│       ├── components/     # React components for the UI
+│       ├── contracts/      # ABI and contract address
+│       └── App.js          # Main React application component
+└── hardhat.config.js       # Hardhat configuration file
 ```
 
-## 🚀 Quick Start for Users
-
-### ⚡ **Using the Live DApp** (Recommended)
-
-1. **Visit the live DApp**: [Your Vercel URL here]
-
-2. **Setup MetaMask for Sepolia:**
-   - Install MetaMask browser extension
-   - Add Sepolia Testnet to MetaMask:
-     - Network Name: `Sepolia`
-     - RPC URL: `https://sepolia.infura.io/v3/YOUR_KEY` or `https://eth-sepolia.g.alchemy.com/v2/YOUR_KEY`
-     - Chain ID: `11155111`
-     - Currency Symbol: `ETH`
-     - Block Explorer: `https://sepolia.etherscan.io`
-
-3. **Get Sepolia Test ETH** (free):
-   - Visit [Sepolia Faucet](https://sepoliafaucet.com/)
-   - Or [Alchemy Sepolia Faucet](https://sepoliafaucet.com/)
-   - Enter your wallet address and get free test ETH
-
-4. **Connect & Vote:**
-   - Connect your MetaMask wallet to the DApp
-   - Make sure you're on Sepolia network
-   - Create proposals and vote!
-
----
-
-## 🛠️ Development Setup
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js (v14 or higher)
-- MetaMask browser extension
-- Git
+- [Node.js](https://nodejs.org/en/) (v14 or later)
+- [MetaMask](https://metamask.io/) browser extension
+- [Git](https://git-scm.com/)
 
-### Local Development
+### Local Setup
 
-1. **Clone the repository:**
-   ```bash
-   git clone [your-repo-url]
-   cd decentralized-voting-dapp
-   ```
+1.  **Clone the repository:**
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   cd frontend
-   npm install
-   cd ..
-   ```
+    ```bash
+    git clone https://github.com/GangserX/Decentralized-Voting-DApp.git
+    cd Decentralized-Voting-DApp
+    ```
 
-3. **Environment Setup** (for deployment only):
+2.  **Install backend dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3.  **Install frontend dependencies:**
+
+    ```bash
+    cd frontend
+    npm install
+    cd ..
+    ```
+
+4.  **Set up environment variables:**
+
+    Create a `.env` file in the root of the project and add the following, replacing the placeholder values with your own:
+
+    ```
+    SEPOLIA_URL=YOUR_ALCHEMY_SEPOLIA_URL
+    PRIVATE_KEY=YOUR_METAMASK_PRIVATE_KEY
+    ```
+
+### Running the Application
+
+1.  **Start the local Hardhat node:**
+
+    ```bash
+    npx hardhat node
+    ```
+
+2.  **Deploy the smart contract to the local network:**
+
+    In a new terminal, run:
+    ```bash
+    npx hardhat run scripts/deploy.js --network localhost
+    ```
+
+3.  **Start the React frontend:**
+
+    In another new terminal, run:
+    ```bash
+    npm run frontend
+    ```
+
+    The application should now be running at `http://localhost:3000`.
+
+## 🧪 Running Tests
+
+To run the tests for the smart contract, execute the following command:
+
+```bash
+npx hardhat test
+```
+
+## � Deployment
+
+### Deploying the Smart Contract
+
+To deploy the smart contract to the Sepolia testnet, run:
+
+```bash
+npx hardhat run scripts/deploy.js --network sepolia
+```
+
+Make sure you have configured your `.env` file with the correct Sepolia RPC URL and your private key, and that your account has enough Sepolia ETH to cover the gas fees.
+
+### Deploying the Frontend
+
+The frontend can be deployed to any static hosting service like Vercel, Netlify, or GitHub Pages.
+
+## 🤝 Contributing
+
+Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
+
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
    ```bash
    # Create .env file in root directory
    ALCHEMY_API_KEY=your_alchemy_api_key
